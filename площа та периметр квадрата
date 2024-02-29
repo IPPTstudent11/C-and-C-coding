@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    float side, area, perimeter;
+    char name[30];
+    int nomer_gryppu_ta_nazva_robotu;
+
+    printf("vvedit dovguny storonu kvadrata: ");
+    scanf("%f", &side);
+    printf("vvedit vashe imya, nomer gruppu ta nazvu robotu: ");
+    scanf("%s", name);
+
+    area = side * side;
+    perimeter = 4 * side;
+
+    printf("ploshcha kvadrata: %.2f\n", area);
+    printf("perumetr kvadrata: %.2f\n", perimeter);
+
+    return 0;
+}
