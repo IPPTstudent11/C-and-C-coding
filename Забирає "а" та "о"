@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+#define MAX_LENGTH 1000
+
+int main() {
+    char string[MAX_LENGTH];
+    printf("Enter a string: ");
+    fgets(string, MAX_LENGTH, stdin);
+
+    char result[MAX_LENGTH];
+    int result_index = 0;
+    int i;
+
+    for (i = 0; string[i] != '\n' && string[i] != '\0'; i++) {
+        if (string[i] != 'a' && string[i] != 'o' && string[i] != 'A' && string[i] != 'O') {
+            result[result_index++] = string[i];
+        }
+    }
+    result[result_index] = '\0';
+
+    printf("Result string: %s\n", result);
+
+    return 0;
+}
