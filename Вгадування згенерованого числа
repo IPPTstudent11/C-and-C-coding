@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+void guessNumber() {
+    srand(time(NULL)); // Ініціалізуємо генератор випадкових чисел
+    int random = rand() % 100; // Задумане число від 0 до 99
+    int attempts = 5; // Кількість спроб
+    int i, find;
+
+    printf("Guess the number (between 0 and 99)!\n");
+
+    for (i = 0; i < attempts; i++) {
+        scanf("%d", &find);
+
+        if (find == random) {
+            printf("You win!!\n");
+            return;
+        } else {
+            if (i == attempts - 1) {
+                printf("Last try: ");
+            } else {
+                printf("this number between %d and %d\n", random - (attempts - i), random + (attempts - i));
+            }
+        }
+    }
+    printf("You will win next time\n");
+}
+
+int main() {
+    guessNumber();
+    return 0;
+}
