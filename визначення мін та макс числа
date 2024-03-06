@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <limits.h>
+
+#define COLS 6
+
+int main() {
+    int matrix[][COLS] = {
+        {2, 7, 1000, 500, 10, 20145155},
+        {5, 5, 7, 70, 700, 1010101}
+    };
+
+    int rows = sizeof(matrix) / sizeof(matrix[0]);
+
+    int minimal = INT_MAX;
+    int maximal = INT_MIN;
+
+    int i, j; // Оголошуємо змінні перед циклом
+
+    for (i = 0; i < rows; i++) {
+        for (j = 0; j < COLS; j++) {
+            if (matrix[i][j] < minimal) {
+                minimal = matrix[i][j];
+            }
+            if (matrix[i][j] > maximal) {
+                maximal = matrix[i][j];
+            }
+        }
+    }
+
+    printf("Min element: %d\n", minimal);
+    printf("Max element: %d\n", maximal);
+
+    return 0;
+}
