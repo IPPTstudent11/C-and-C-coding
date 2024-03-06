@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int isLowerCaseOrUpperCase(char c) {
+    if(isupper(c)) {
+        return 1;
+    } else if(islower(c)) {
+        return 0;
+    } else {
+        return 0;
+    }
+}
+
+int main() {
+    char input;
+    printf("Enter a character: ");
+    scanf(" %c", &input);
+    printf("%d\n", isLowerCaseOrUpperCase(input));
+    return 0;
+}
