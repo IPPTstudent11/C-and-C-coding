@@ -7,31 +7,33 @@ int main() {
         {8, 8, 5, 40, 22, 23, 21}
     };
 
-    int total_elements = 0;
-    int count = 0;
-    int i;
+    int total_elements = 0; // Загальна кількість елементів в масиві
+    int count = 0; // Лічильник для зберігання індексу в масиві result
+    int i, j; // Змінні для ітерації
 
+    // Обчислення загальної кількості елементів у масиві
     for (i = 0; i < sizeof(array) / sizeof(array[0]); i++) {
         total_elements += sizeof(array[i]) / sizeof(int);
     }
 
-    int result[total_elements];
-    int j;
+    int result[total_elements]; // Масив для зберігання всіх елементів з двовимірного масиву
 
+    // Перехід по кожному рядку двовимірного масиву та копіювання його елементів до result
     for (i = 0; i < sizeof(array) / sizeof(array[0]); i++) {
         for (j = 0; j < sizeof(array[i]) / sizeof(int); j++) {
             result[count++] = array[i][j];
         }
     }
 
-    int sum = 0;
+    int sum = 0; // Змінна для обчислення суми всіх елементів масиву
     for (i = 0; i < total_elements; i++) {
         sum += result[i];
     }
 
-    int min = result[0];
-    int max = result[0];
+    int min = result[0]; // Мінімальний елемент масиву
+    int max = result[0]; // Максимальний елемент масиву
 
+    // Пошук мінімального та максимального елементів у масиві result
     for (i = 1; i < total_elements; i++) {
         if (result[i] < min) {
             min = result[i];
@@ -41,8 +43,11 @@ int main() {
         }
     }
 
+    // Обчислення середнього арифметичного елементів масиву без урахування мінімального та максимального
     int average = (sum - min - max) / (total_elements - 2);
 
     printf("serednye arefmetuchne ne vrahovuyuchu min ta max elementiv: %d\n", average);
 
     return 0;
+}
+
