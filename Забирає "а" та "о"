@@ -3,22 +3,25 @@
 #define MAX_LENGTH 1000
 
 int main() {
-    char string[MAX_LENGTH];
+    char string[MAX_LENGTH]; // Оголошення масиву для зберігання рядка
     printf("Enter a string: ");
-    fgets(string, MAX_LENGTH, stdin);
+    fgets(string, MAX_LENGTH, stdin); // Зчитування рядка з клавіатури
 
-    char result[MAX_LENGTH];
-    int result_index = 0;
-    int i;
+    char result[MAX_LENGTH]; // Оголошення масиву для зберігання результату
+    int result_index = 0; // Змінна для збереження індексу в масиві результату
+    int i; // Змінна для ітерації по введеному рядку
 
+    // Цикл для перебору всіх символів у введеному рядку
     for (i = 0; string[i] != '\n' && string[i] != '\0'; i++) {
+        // Перевірка, чи символ не є 'a', 'o', 'A' або 'O'
         if (string[i] != 'a' && string[i] != 'o' && string[i] != 'A' && string[i] != 'O') {
-            result[result_index++] = string[i];
+            result[result_index++] = string[i]; // Додавання символу до результату
         }
     }
-    result[result_index] = '\0';
+    result[result_index] = '\0'; // Додавання нуль-термінатора до результату
 
-    printf("Result string: %s\n", result);
+    printf("Result string: %s\n", result); // Виведення результату на екран
 
     return 0;
 }
+
