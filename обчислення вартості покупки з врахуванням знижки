@@ -20,7 +20,7 @@ void price(double a) {
 
 int main() {
     double purchase_cost; // Змінна для збереження вартості покупки
-    printf("Enter the purchase cost: "); // Повідомлення про введення вартості покупки
+    printf("Enter the purchase cost: ");
     scanf("%lf", &purchase_cost); // Зчитування вартості покупки з клавіатури
     price(purchase_cost); // Виклик функції для обчислення вартості з урахуванням знижки
     return 0;
