@@ -1,0 +1,72 @@
+#include <stdio.h>
+#include <stdlib.h> // для використання функції malloc
+
+// Оголошення структури Student
+struct Student {
+    char* firstname;
+    char* lastname;
+    char* data;
+    int group;
+    int range;
+    char* sex;
+};
+
+int main() {
+    // Створення масиву студентів
+    struct Student* list = malloc(4 * sizeof(struct Student));
+
+    // Ініціалізація студентів
+    list[0].firstname = "Molodeth";
+    list[0].lastname = "Super";
+    list[0].data = "January";
+    list[0].group = 5;
+    list[0].range = 51;
+    list[0].sex = "male";
+
+    list[1].firstname = "Molodeth";
+    list[1].lastname = "Super";
+    list[1].data = "January";
+    list[1].group = 5;
+    list[1].range = 50;
+    list[1].sex = "female";
+
+    list[2].firstname = "Super";
+    list[2].lastname = "Super";
+    list[2].data = "January";
+    list[2].group = 5;
+    list[2].range = 49;
+    list[2].sex = "male";
+
+    list[3].firstname = "Ktoto";
+    list[3].lastname = "Super";
+    list[3].data = "January";
+    list[3].group = 5;
+    list[3].range = 48;
+    list[3].sex = "female";
+
+    // Пошук та виведення студентів з рейтингом менше 50
+    int index = 0;
+    if (list[index].range < 50) {
+        printf("%s %s %s %d %d %s\n", list[index].firstname, list[index].lastname, list[index].data, list[index].group, list[index].range, list[index].sex);
+    }
+    index++;
+
+    if (list[index].range < 50) {
+        printf("%s %s %s %d %d %s\n", list[index].firstname, list[index].lastname, list[index].data, list[index].group, list[index].range, list[index].sex);
+    }
+    index++;
+
+    if (list[index].range < 50) {
+        printf("%s %s %s %d %d %s\n", list[index].firstname, list[index].lastname, list[index].data, list[index].group, list[index].range, list[index].sex);
+    }
+    index++;
+
+    if (list[index].range < 50) {
+        printf("%s %s %s %d %d %s\n", list[index].firstname, list[index].lastname, list[index].data, list[index].group, list[index].range, list[index].sex);
+    }
+
+    // Звільнення пам'яті, виділеної для масиву студентів
+    free(list);
+
+    return 0;
+}
