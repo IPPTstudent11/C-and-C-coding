@@ -1,21 +1,27 @@
 #include <stdio.h>
 
+// Функція для обчислення вартості покупки з урахуванням знижки
 void price(double a) {
-    if(a < 50) {
-        printf("Price %.2f\n", a);
-    } else if(a >= 50 && a < 100) {
-        double discount = (a / 100) * 5;
-        printf("Price %.2f\n", (a - discount));
-    } else {
-        double discount = (a / 100) * 7;
-        printf("Price %.2f\n", (a - discount));
+    // Перевірка, чи вартість покупки менша за 50
+    if (a < 50) {
+        printf("Price %.2f\n", a); // Вивід вартості без знижки
+    } 
+    // Перевірка, чи вартість покупки від 50 до 100
+    else if (a >= 50 && a < 100) {
+        double discount = (a / 100) * 5; // Розрахунок знижки
+        printf("Price %.2f\n", (a - discount)); // Вивід вартості зі знижкою
+    } 
+    // Вартість покупки більше або дорівнює 100
+    else {
+        double discount = (a / 100) * 7; // Розрахунок знижки
+        printf("Price %.2f\n", (a - discount)); // Вивід вартості зі знижкою
     }
 }
 
 int main() {
-    double purchase_cost;
-    printf("Enter the purchase cost: ");
-    scanf("%lf", &purchase_cost);
-    price(purchase_cost);
+    double purchase_cost; // Змінна для збереження вартості покупки
+    printf("Enter the purchase cost: "); // Повідомлення про введення вартості покупки
+    scanf("%lf", &purchase_cost); // Зчитування вартості покупки з клавіатури
+    price(purchase_cost); // Виклик функції для обчислення вартості з урахуванням знижки
     return 0;
 }
