@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_RECORDS 100
+
+struct Car {
+    char model[50];
+    int year;
+    float price;
+    char color[20];
+    float power;
+};
+
+int main() {
+    struct Car cars[MAX_RECORDS];
+    int num_cars = 0;
+    int i = 0;
+
+    printf("Введіть кількість автомобілів: ");
+    scanf("%d", &num_cars);
+
+    // Введення даних про автомобілі
+    while (i < num_cars) {
+        printf("\nДані про автомобіль %d:\n", i + 1);
+        printf("Модель: ");
+        scanf("%s", cars[i].model);
+        printf("Рік випуску: ");
+        scanf("%d", &cars[i].year);
+        printf("Ціна: ");
+        scanf("%f", &cars[i].price);
+        printf("Колір: ");
+        scanf("%s", cars[i].color);
+        printf("Потужність двигуна: ");
+        scanf("%f", &cars[i].power);
+
+        i++;
+    }
+
+    // Пошук та виведення на екран автомобілів з заданими характеристиками
+    i = 0;
+    printf("\nАвтомобілі червоного кольору, випущені після 2002 року та коштують менше 50000 грн.:\n");
+    while (i < num_cars) {
+        if (strcmp(cars[i].color, "червоний") == 0 && cars[i].year > 2002 && cars[i].price < 50000) {
+            printf("Модель: %s, Рік випуску: %d, Ціна: %.2f грн., Колір: %s, Потужність двигуна: %.2f\n",
+                   cars[i].model, cars[i].year, cars[i].price, cars[i].color, cars[i].power);
+        }
+        i++;
+    }
+
+    return 0;
+}
