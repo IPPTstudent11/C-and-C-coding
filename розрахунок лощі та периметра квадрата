@@ -9,10 +9,6 @@ int main() {
     printf("vvedit dovguny storonu kvadrata: ");
     scanf("%f", &side); // Зчитування значення довжини сторони з клавіатури
 
-    // Вивід на екран запиту на введення імені, номеру групи та назви роботи
-    printf("vvedit vashe imya, nomer gruppu ta nazvu robotu: ");
-    scanf("%s", name); // Зчитування значення імені з клавіатури
-
     area = side * side; // Обчислення площі квадрата
     perimeter = 4 * side; // Обчислення периметру квадрата
 
